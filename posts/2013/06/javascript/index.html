@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="description" content="喔要做法令易讀器於是翻了JavaScript的文章，筆記一些如下： 可省略的參數123456function abridgable(param1, param2) &amp;#123;    if(typeof param2 == &quot;undefined&quot;)        param2 = &quot;default value&quot;;    return param1 + param2;&amp;#125;alert(abri">
+<meta name="keywords" content="程式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 函式筆記">
+<meta property="og:url" content="https://kong0107.github.io/posts/2013/06/javascript/index.html">
+<meta property="og:site_name" content="阿空">
+<meta property="og:description" content="喔要做法令易讀器於是翻了JavaScript的文章，筆記一些如下： 可省略的參數123456function abridgable(param1, param2) &amp;#123;    if(typeof param2 == &quot;undefined&quot;)        param2 = &quot;default value&quot;;    return param1 + param2;&amp;#125;alert(abri">
+<meta property="og:image" content="https://kong0107.github.io/images/og_image.png">
+<meta property="og:image" content="https://www.gravatar.com/avatar/9a5ccdc3575869af9da0cec6d4a73c6b?s=200">
+<meta property="og:updated_time" content="2017-04-10T17:21:04.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 函式筆記">
+<meta name="twitter:description" content="喔要做法令易讀器於是翻了JavaScript的文章，筆記一些如下： 可省略的參數123456function abridgable(param1, param2) &amp;#123;    if(typeof param2 == &quot;undefined&quot;)        param2 = &quot;default value&quot;;    return param1 + param2;&amp;#125;alert(abri">
+<meta name="twitter:image" content="https://kong0107.github.io/images/og_image.png">
+<meta name="twitter:creator" content="@kong0107">
+<meta property="fb:app_id" content="396108664094704">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>JavaScript 函式筆記 - 阿空</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="阿空" type="application/atom+xml" />
+    
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">首頁</a></li>
+        
+          <li><a href="/about.html">關於</a></li>
+        
+          <li><a href="/archives.html">文集</a></li>
+        
+          <li><a href="http://www.yiwu.io/products/kong-dildo">購買翻模陽具</a></li>
+        
+      </ul>
+    </span>
+    <!--br/-->
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/posts/2013/03/referendum-2/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/posts/2013/08/foreword/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+<ul>
+  <li title="Facebook"><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kong0107.github.io/posts/2013/06/javascript/index.html"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li title="Twitter"><a class="icon" href="https://twitter.com/share?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&text=阿空"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li title="LinkedIn"><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li title="Pininterest"><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&is_video=false&description=阿空"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li title="Email"><a class="icon" href="mailto:?subject=阿空&body=Check out this article: https://kong0107.github.io/posts/2013/06/javascript/index.html"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <!--li title="Pocket"><a class="icon" href="https://getpocket.com/save?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li-->
+  <li title="reddit"><a class="icon" href="http://reddit.com/submit?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <!--li title="StumbleUpon"><a class="icon" href="http://www.stumbleupon.com/submit?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li-->
+  <li title="Digg"><a class="icon" href="http://digg.com/submit?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li title="Tumblr"><a class="icon" href="http://www.tumblr.com/share/link?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&name=阿空&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+	
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#可省略的參數"><span class="toc-number">1.</span> <span class="toc-text">可省略的參數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#變動引數數量"><span class="toc-number">2.</span> <span class="toc-text">變動引數數量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#把匿名函數指派給變數"><span class="toc-number">3.</span> <span class="toc-text">把匿名函數指派給變數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#直接執行匿名參數"><span class="toc-number">4.</span> <span class="toc-text">直接執行匿名參數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名函數的其他寫法"><span class="toc-number">5.</span> <span class="toc-text">匿名函數的其他寫法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用匿名函數回傳函數"><span class="toc-number">6.</span> <span class="toc-text">用匿名函數回傳函數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#覆寫既存函數"><span class="toc-number">7.</span> <span class="toc-text">覆寫既存函數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用匿名函數覆寫既存函數"><span class="toc-number">8.</span> <span class="toc-text">用匿名函數覆寫既存函數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用JSON宣告物件"><span class="toc-number">9.</span> <span class="toc-text">用JSON宣告物件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用匿名函數來回傳物件"><span class="toc-number">10.</span> <span class="toc-text">用匿名函數來回傳物件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#不想用匿名函數的話當然也可以"><span class="toc-number">11.</span> <span class="toc-text">不想用匿名函數的話當然也可以</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#支援私有成員的物件"><span class="toc-number">12.</span> <span class="toc-text">支援私有成員的物件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用new宣告"><span class="toc-number">13.</span> <span class="toc-text">用new宣告</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用-prototype"><span class="toc-number">14.</span> <span class="toc-text">用 prototype</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prototype-的應用範例"><span class="toc-number">15.</span> <span class="toc-text">prototype 的應用範例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Getter-amp-Setter"><span class="toc-number">16.</span> <span class="toc-text">Getter & Setter</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#參考資料"><span class="toc-number">17.</span> <span class="toc-text">參考資料</span></a></li></ol>
+      </div>
+	
+  </span>
+</div>
+
+    <div class="content index width mx-auto px2 my3">
+        <header id="header" class="clearfix">
+  <h1 id="title">
+    <a href="/">
+      <img id="logo" src="/images/logo-circle.png">
+      阿空
+    </a>
+  </h1>
+  <nav>
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">首頁</a></li>
+       
+        <li><a href="/about.html">關於</a></li>
+       
+        <li><a href="/archives.html">文集</a></li>
+       
+        <li><a href="http://www.yiwu.io/products/kong-dildo">購買翻模陽具</a></li>
+      
+    </ul>
+  </nav>
+</header>
+<!--%- partial('_partial/debug') %-->
+
+        
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        JavaScript 函式筆記
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">阿空</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2013-06-10T16:00:00.000Z" itemprop="datePublished">2013-06-11</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/程式/">程式</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+  <div class="content " itemprop="articleBody">
+    
+
+    <p>喔要做法令易讀器於是翻了JavaScript的文章，筆記一些如下：</p>
+<h1 id="可省略的參數"><a href="#可省略的參數" class="headerlink" title="可省略的參數"></a>可省略的參數</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abridgable</span>(<span class="params">param1, param2</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> param2 == <span class="string">"undefined"</span>)</div><div class="line">        param2 = <span class="string">"default value"</span>;</div><div class="line">    <span class="keyword">return</span> param1 + param2;</div><div class="line">&#125;</div><div class="line">alert(abridgable(<span class="string">"haha "</span>));</div></pre></td></tr></table></figure>
+<h1 id="變動引數數量"><a href="#變動引數數量" class="headerlink" title="變動引數數量"></a>變動引數數量</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">switch</span>(<span class="built_in">arguments</span>.length) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="number">0</span>: <span class="built_in">console</span>.log(<span class="string">"There is no arguments."</span>); <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">console</span>.log(<span class="string">"There's only one argument."</span>); <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">default</span>: <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length + <span class="string">" arguments."</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> arg0 = <span class="built_in">arguments</span>[<span class="number">0</span>];</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"The first argument is: "</span> + arg0);</div><div class="line">    <span class="comment">/// 跟C系列的char *argv[0]不同，</span></div><div class="line">    <span class="comment">/// 第零個並不是程式／函數名稱，而是函數的第一個引數</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="把匿名函數指派給變數"><a href="#把匿名函數指派給變數" class="headerlink" title="把匿名函數指派給變數"></a>把匿名函數指派給變數</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">anony = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">/// 相當於 function anony() &#123; /* */ &#125;</span></div><div class="line">    <span class="comment">/// 這只是函數的宣告，並不會執行</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="直接執行匿名參數"><a href="#直接執行匿名參數" class="headerlink" title="直接執行匿名參數"></a>直接執行匿名參數</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">result = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">/// 相當於「宣告後馬上執行」</span></div><div class="line">    <span class="comment">/// 因為是匿名，不用擔心函數名稱跟別人相同</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="匿名函數的其他寫法"><a href="#匿名函數的其他寫法" class="headerlink" title="匿名函數的其他寫法"></a>匿名函數的其他寫法</h1><p>易混淆，不建議使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">/// 這個寫法「一定」要加最外面的小括號</span></div><div class="line">&#125;());</div><div class="line">result = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">/// 或是一定得將執行結果馬上也丟給別的變數或函數</span></div><div class="line">&#125;();</div></pre></td></tr></table></figure></p>
+<h1 id="用匿名函數回傳函數"><a href="#用匿名函數回傳函數" class="headerlink" title="用匿名函數回傳函數"></a>用匿名函數回傳函數</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>();</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    arr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> tmp = i; <span class="comment">/// 指派後，tmp對於arr[x]即是固定的</span></div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> tmp; <span class="comment">/// 即使i變動了，tmp也不會變動</span></div><div class="line">        &#125;</div><div class="line">    &#125;();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>若是直接return i; 那麼之後arr<a href="">3</a>也只會得到10（即最後的i的值）</p>
+<h1 id="覆寫既存函數"><a href="#覆寫既存函數" class="headerlink" title="覆寫既存函數"></a>覆寫既存函數</h1><p>以覆寫onLoad事件為例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.onload) old_onload = <span class="built_in">window</span>.onload;</div><div class="line"><span class="keyword">else</span> old_onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    old_onload();</div><div class="line">    alert(<span class="string">"頁面讀取完畢"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="用匿名函數覆寫既存函數"><a href="#用匿名函數覆寫既存函數" class="headerlink" title="用匿名函數覆寫既存函數"></a>用匿名函數覆寫既存函數</h1><p>幫parseInt()加上基本的中文對照<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span> = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> orig = <span class="built_in">parseInt</span>;</div><div class="line">    <span class="comment">/// 區域變數不會真的消失，只是外部無法存取</span></div><div class="line">    <span class="keyword">var</span> chinese = <span class="string">"零一二三四五六七八九"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> result = orig.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">        <span class="keyword">if</span>(!<span class="built_in">isNaN</span>(result)) <span class="keyword">return</span> result;</div><div class="line">        <span class="keyword">var</span> str = <span class="built_in">arguments</span>[<span class="number">0</span>].replace(<span class="regexp">/\s/g</span>, <span class="string">""</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">            <span class="keyword">var</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(chinese.charAt(i), <span class="string">"g"</span>);</div><div class="line">            str = str.replace(re, <span class="built_in">String</span>(i));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> orig(str, <span class="number">10</span>);</div><div class="line">    &#125;</div><div class="line">&#125;(); <span class="comment">/// 注意是「用匿名函數回傳函數」的方式</span></div><div class="line">alert(<span class="built_in">parseInt</span>(<span class="string">"七五三三九六七"</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="用JSON宣告物件"><a href="#用JSON宣告物件" class="headerlink" title="用JSON宣告物件"></a>用JSON宣告物件</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">objA = &#123;</div><div class="line">    <span class="comment">/// 在「只需要一個這樣的物件」時很好用</span></div><div class="line">    var1: <span class="string">"public member variable"</span>,</div><div class="line">    <span class="attr">var2</span>: <span class="string">"you can see it as attribute"</span>,</div><div class="line">    <span class="attr">func1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// member function</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">func2</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// member function</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">objA.var1 = <span class="string">"other value"</span>;</div><div class="line">objA.func1(); <span class="comment">/// 執行物件的成員函數</span></div></pre></td></tr></table></figure>
+<h1 id="用匿名函數來回傳物件"><a href="#用匿名函數來回傳物件" class="headerlink" title="用匿名函數來回傳物件"></a>用匿名函數來回傳物件</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">objB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"objB"</span>);</div><div class="line">    <span class="keyword">return</span> &#123; <span class="comment">/// 同樣用JSON宣告物件</span></div><div class="line">        var1: <span class="string">"public"</span>,</div><div class="line">        <span class="attr">func1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            alert(<span class="string">"member function"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;(); <span class="comment">/// 即「宣告後馬上執行」</span></div></pre></td></tr></table></figure>
+<h1 id="不想用匿名函數的話當然也可以"><a href="#不想用匿名函數的話當然也可以" class="headerlink" title="不想用匿名函數的話當然也可以"></a>不想用匿名函數的話當然也可以</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ClassB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/// 想像成這就是建構子</span></div><div class="line">    alert(<span class="string">"constructor"</span>);</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">var1</span>: <span class="string">"public"</span>,</div><div class="line">        <span class="attr">func1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            alert(<span class="string">"not constructor"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">insB = ClassB();</div><div class="line">insB2 = ClassB(); <span class="comment">/// 也就方便宣告兩個以上相同結構的物件</span></div></pre></td></tr></table></figure>
+<hr>
+<p>以上應該夠用了，不過如果想要更多的話：</p>
+<h1 id="支援私有成員的物件"><a href="#支援私有成員的物件" class="headerlink" title="支援私有成員的物件"></a>支援私有成員的物件</h1><p>以「計數器」為例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassC</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> counter = <span class="number">0</span>; <span class="comment">/// 私有變數，外部不能使用</span></div><div class="line">    <span class="keyword">var</span> logger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/// 私有函數，外部不能呼叫</span></div><div class="line">        <span class="built_in">console</span>.log(counter);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="comment">/// 依舊回傳JSON</span></div><div class="line">        name: <span class="string">"name"</span>,</div><div class="line">        <span class="attr">inc</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            ++counter;    <span class="comment">/// 公開函數可以存取私有變數</span></div><div class="line">            logger(); <span class="comment">/// 公開函數可以呼叫私有函數</span></div><div class="line">            <span class="keyword">return</span> counter;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">insC = ClassC();</div><div class="line">alert(insC.inc()); <span class="comment">/// 相當於 alert(1);</span></div><div class="line">insC.counter; <span class="comment">/// undefined</span></div><div class="line">insC.logger; <span class="comment">/// undefined</span></div><div class="line">insC.logger(); <span class="comment">/// TypeError: Object has no method 'abc'</span></div><div class="line"></div><div class="line">insC.logger = <span class="string">"lalala"</span>; <span class="comment">/// 這樣不會出錯</span></div><div class="line">insC.inc(); <span class="comment">/// 即使inc()所呼叫的logger()看似已被複寫，這樣也依舊可以執行</span></div></pre></td></tr></table></figure></p>
+<p>以上依舊可以用匿名函數的方式寫<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">objC = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> counter = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> logger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(counter);&#125;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">"name"</span>,</div><div class="line">        <span class="attr">inc</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            ++counter;</div><div class="line">            logger();</div><div class="line">            <span class="keyword">return</span> counter;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;();</div><div class="line">alert(objC.inc()); <span class="comment">/// 相當於 alert(1);</span></div></pre></td></tr></table></figure></p>
+<h1 id="用new宣告"><a href="#用new宣告" class="headerlink" title="用new宣告"></a>用new宣告</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassD</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> privateVar = <span class="string">"private"</span>;</div><div class="line">    <span class="keyword">this</span>.weirdVar = <span class="string">"weirdo"</span>; <span class="comment">/// 詳候述</span></div><div class="line"></div><div class="line">    globalVar = <span class="string">"global"</span>;  <span class="comment">/// 單純複習一下</span></div><div class="line">    globalFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// 全域函數</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.weirdFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// 詳候述</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> privateFunc1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// 私有成員函數</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">privateFunc2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// 私有成員函數（不是全域喔）</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">objD = ClassD(); <span class="comment">/// objD會undefined，weirdVar 和 weirdFunc 是全域變數／函數</span></div><div class="line">insD = <span class="keyword">new</span> ClassD; <span class="comment">/// weirdVar 和 weirdFunc 是類別的公開成員</span></div><div class="line">insD2 = <span class="keyword">new</span> ClassD(); <span class="comment">/// 與上同</span></div></pre></td></tr></table></figure>
+<p>前述宣告方式如果有回傳值時，要特別小心<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassE</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> privateVar = <span class="string">"private"</span>;</div><div class="line">    <span class="keyword">var</span> privateFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">"pFunc"</span>; &#125;</div><div class="line">    <span class="keyword">this</span>.weirdVar = <span class="string">"weirdo"</span>;</div><div class="line">    <span class="keyword">this</span>.weirdFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">"wFunc"</span>; &#125;</div><div class="line">    <span class="keyword">return</span> returnValue;</div><div class="line">&#125;</div><div class="line">e1 = ClassE();</div><div class="line">e2 = <span class="keyword">new</span> ClassE();</div></pre></td></tr></table></figure></p>
+<ul>
+<li>如果 returnValue 是函數、陣列、物件（null除外），那麼：<ul>
+<li>e1 與 e2 均等同 returnValue</li>
+<li>weirdVar 和 weirdFunc 是全域</li>
+<li>如果是物件，即同於前述 ClassC 的用法，可在 returnValue 中存取 privateVar 和 privateFunc</li>
+</ul>
+</li>
+<li>如果 returnValue 是數字（含NaN）、布林、字串、null、未定義（即直接<code>return;</code>），那麼：<ul>
+<li>e1 是 returnValue，weirdVar 和 weirdFunc 消失無蹤</li>
+<li>e2 是物件，weirdVar 和 weirdFunc 是公開成員</li>
+</ul>
+</li>
+</ul>
+<h1 id="用-prototype"><a href="#用-prototype" class="headerlink" title="用 prototype"></a>用 prototype</h1><p>如果需要擴充既存實體，或是繼承其他類別，則需要此。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassF</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"constructor"</span>); <span class="comment">/// 可以沒有內容，但是必須宣告為function</span></div><div class="line">&#125;</div><div class="line">ClassF.prototype = &#123;</div><div class="line">    <span class="attr">var1</span>: <span class="string">"public member variable"</span>,</div><div class="line">    <span class="attr">var2</span>: <span class="string">"you can see it as attribute"</span>,</div><div class="line">    <span class="attr">func1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// member function</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">func2</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/// member function</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">insF = <span class="keyword">new</span> ClassF();</div><div class="line">ClassF.prototype.addedFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"new function"</span>);</div><div class="line">&#125;</div><div class="line">insF.addedFunc(); <span class="comment">/// 即使 insF 早於 addedFunc 宣告，前者仍可順利使用後者</span></div></pre></td></tr></table></figure></p>
+<h1 id="prototype-的應用範例"><a href="#prototype-的應用範例" class="headerlink" title="prototype 的應用範例"></a>prototype 的應用範例</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.alert=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="keyword">this</span>); &#125;</div><div class="line"><span class="string">"application"</span>.alert();</div></pre></td></tr></table></figure>
+<h1 id="Getter-amp-Setter"><a href="#Getter-amp-Setter" class="headerlink" title="Getter &amp; Setter"></a>Getter &amp; Setter</h1><p>例如Array元件的length表現的像個public member variable，但其實是個getter，不能直接覆寫。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Field</span>(<span class="params">val</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> value = val;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.__defineGetter__(<span class="string">"value"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.__defineSetter__(<span class="string">"value"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</div><div class="line">        value = val;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="http://blog.joomla.org.tw/javascript/54-general/161-Javascript-Module-Pattern.html" target="_blank" rel="external">Eddy@Joomla!藏經閣 - Javascript Module Pattern</a></li>
+<li><a href="http://pulipuli.blogspot.tw/2010/10/javascriptprototypeconstructor.html" target="_blank" rel="external">JavaScript物件導向繼承：以prototype方式繼承中需要呼叫constructor的問題 : 布丁布丁吃什麼？</a></li>
+<li><a href="http://ejohn.org/blog/javascript-getters-and-setters/" target="_blank" rel="external">John Resig - JavaScript Getters and Setters</a></li>
+<li><a href="http://stackoverflow.com/questions/296667/overriding-a-javascript-function-while-referencing-the-original" target="_blank" rel="external">override - Overriding a JavaScript function while referencing the original - Stack Overflow</a></li>
+<li><a href="http://api.jquery.com/Types/#Proxy_Pattern" target="_blank" rel="external">Types | jQuery API Documentation</a></li>
+</ul>
+
+  </div>
+  
+    <footer>
+      <p>原始文章：<cite><a target="_blank" rel="external" href="http://kong0107.blogspot.tw/2013/06/javascript.html">http://kong0107.blogspot.tw/2013/06/javascript.html</a></cite></p>
+    </footer>
+  
+</article>
+<footer>
+  
+  <div id="comments">
+	<div class="fb-like"
+		data-href="https://kong0107.github.io/posts/2013/06/javascript/index.html"
+		data-layout="button"
+		data-share="true"
+		data-colorscheme="dark"
+	></div>
+	<div
+		class="fb-comments"
+		data-href="https://kong0107.github.io/posts/2013/06/javascript/index.html"
+		data-width="100%"
+		data-numposts="5"
+		data-colorscheme="dark"
+	></div>
+
+	
+		<div class="blog-post-comments">
+			<div id="disqus_thread">
+				<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</div>
+		</div>
+	
+  </div>
+
+
+</footer>
+
+    </div>
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about.html">關於</a></li>
+         
+          <li><a href="/archives.html">文集</a></li>
+         
+          <li><a href="http://www.yiwu.io/products/kong-dildo">購買翻模陽具</a></li>
+        
+      </ul>
+    </div>
+
+	
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#可省略的參數"><span class="toc-number">1.</span> <span class="toc-text">可省略的參數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#變動引數數量"><span class="toc-number">2.</span> <span class="toc-text">變動引數數量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#把匿名函數指派給變數"><span class="toc-number">3.</span> <span class="toc-text">把匿名函數指派給變數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#直接執行匿名參數"><span class="toc-number">4.</span> <span class="toc-text">直接執行匿名參數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名函數的其他寫法"><span class="toc-number">5.</span> <span class="toc-text">匿名函數的其他寫法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用匿名函數回傳函數"><span class="toc-number">6.</span> <span class="toc-text">用匿名函數回傳函數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#覆寫既存函數"><span class="toc-number">7.</span> <span class="toc-text">覆寫既存函數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用匿名函數覆寫既存函數"><span class="toc-number">8.</span> <span class="toc-text">用匿名函數覆寫既存函數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用JSON宣告物件"><span class="toc-number">9.</span> <span class="toc-text">用JSON宣告物件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用匿名函數來回傳物件"><span class="toc-number">10.</span> <span class="toc-text">用匿名函數來回傳物件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#不想用匿名函數的話當然也可以"><span class="toc-number">11.</span> <span class="toc-text">不想用匿名函數的話當然也可以</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#支援私有成員的物件"><span class="toc-number">12.</span> <span class="toc-text">支援私有成員的物件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用new宣告"><span class="toc-number">13.</span> <span class="toc-text">用new宣告</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用-prototype"><span class="toc-number">14.</span> <span class="toc-text">用 prototype</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prototype-的應用範例"><span class="toc-number">15.</span> <span class="toc-text">prototype 的應用範例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Getter-amp-Setter"><span class="toc-number">16.</span> <span class="toc-text">Getter & Setter</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#參考資料"><span class="toc-number">17.</span> <span class="toc-text">參考資料</span></a></li></ol>
+      </div>
+	
+
+    <div id="share-footer" style="display: none">
+      
+<ul>
+  <li title="Facebook"><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kong0107.github.io/posts/2013/06/javascript/index.html"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li title="Twitter"><a class="icon" href="https://twitter.com/share?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&text=阿空"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li title="LinkedIn"><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li title="Pininterest"><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&is_video=false&description=阿空"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li title="Email"><a class="icon" href="mailto:?subject=阿空&body=Check out this article: https://kong0107.github.io/posts/2013/06/javascript/index.html"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <!--li title="Pocket"><a class="icon" href="https://getpocket.com/save?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li-->
+  <li title="reddit"><a class="icon" href="http://reddit.com/submit?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <!--li title="StumbleUpon"><a class="icon" href="http://www.stumbleupon.com/submit?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li-->
+  <li title="Digg"><a class="icon" href="http://digg.com/submit?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&title=阿空"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li title="Tumblr"><a class="icon" href="http://www.tumblr.com/share/link?url=https://kong0107.github.io/posts/2013/06/javascript/index.html&name=阿空&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        
+			<li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> 目錄</a></li>
+		
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> 選單</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 阿空
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">首頁</a></li>
+        <li><a target="_blank" href="https://github.com/kong0107/kong0107.github.io/blob/hexo/source/_posts/2013/2013-06-11-javascript.md">源碼</a>
+        <li><a href="/atom.xml">RSS</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-1747270-19', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'kongkao';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<!-- Facebook JavaScript SDK  -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1877103482502667";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- JavaScript Interfaces for Twitter for Websites -->
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!-- Flickr -->
+<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
