@@ -1217,6 +1217,12 @@ article .content .formula img {
   background-color: #fff;
   padding: 0.25rem 0.75rem;
 }
+article footer {
+  margin: 2rem 0;
+}
+#content > footer {
+  margin-top: 2rem;
+}
 .posttitle {
   text-transform: none;
   font-size: 1.25rem;
