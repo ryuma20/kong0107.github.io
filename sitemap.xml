@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kong0107.github.io/about.html</loc>
+    
+    <lastmod>2017-04-12T04:54:14.950Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kong0107.github.io/contact.html</loc>
+    
+    <lastmod>2017-04-11T17:09:08.048Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kong0107.github.io/posts/2015/10/boss/</loc>
     
     <lastmod>2017-04-11T10:04:56.270Z</lastmod>
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>https://kong0107.github.io/contact.html</loc>
-    
-    <lastmod>2017-04-10T14:38:53.535Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kong0107.github.io/boss.html</loc>
     
     <lastmod>2017-04-10T14:38:53.532Z</lastmod>
@@ -61,20 +68,6 @@
     <loc>https://kong0107.github.io/archives.html</loc>
     
     <lastmod>2017-04-10T14:38:53.530Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kong0107.github.io/activity.html</loc>
-    
-    <lastmod>2017-04-10T14:38:53.527Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kong0107.github.io/about.html</loc>
-    
-    <lastmod>2017-04-10T14:38:53.524Z</lastmod>
     
   </url>
   
