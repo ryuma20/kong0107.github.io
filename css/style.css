@@ -1178,7 +1178,8 @@ article .content blockquote:before {
 article .content blockquote footer {
   color: #666;
   font-size: 11px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  text-align: right;
 }
 article .content blockquote footer a {
   color: #666;
