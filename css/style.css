@@ -427,11 +427,6 @@
 .content ol,
 .content dl {
   line-height: 1.725;
-}
-.content ul ul,
-.content ol ul,
-.content ul ol,
-.content ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1165,7 +1160,7 @@ article .content blockquote {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 article .content blockquote p {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
 }
 article .content blockquote:before {
   color: #ccffb6;
