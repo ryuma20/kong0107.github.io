@@ -1155,7 +1155,7 @@ article .content .video-container embed {
 }
 article .content blockquote {
   background: inherit;
-  color: #ccffb6;
+  color: rgba(204,255,182,0.867);
   border-left: 0px solid #ccc;
   margin: 0.5rem;
   padding: 0.5em 10px;
@@ -1377,6 +1377,7 @@ article.media .link_list {
 article.media .link_list li {
   display: inline-block;
   width: 4rem;
+  white-space: nowrap;
 }
 article.media .link_list li +li {
   border-left: 1px dotted #666;
