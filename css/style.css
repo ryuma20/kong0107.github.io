@@ -512,6 +512,11 @@ body {
   color: #d480aa;
   background-image: none;
 }
+.content a.icon img {
+  display: initial !important;
+  margin: initial !important;
+  vertical-align: middle;
+}
 .content h1 a,
 .content .h1 a,
 .content h2 a,
