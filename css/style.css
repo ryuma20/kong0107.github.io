@@ -1059,7 +1059,6 @@ body {
   display: block;
   font-size: 14px;
   color: #666;
-  min-width: 100px;
   margin-right: 16px;
 }
 .post-list .tags {
@@ -1076,7 +1075,6 @@ body {
 @media (min-width: 480px) {
   .post-list .post-item {
     display: flex;
-    margin-bottom: 5px;
   }
   .post-list .post-item .meta {
     text-align: left;
@@ -1229,7 +1227,7 @@ article > footer {
 }
 .posttitle {
   text-transform: none;
-  font-size: 1.25rem;
+  font-size: 125%;
   line-height: 1.25;
 }
 .article-tag .tag-link:before {
@@ -1391,6 +1389,17 @@ article.media .link_list li +li {
 article.media .link_list img {
   height: 1rem;
   vertical-align: middle;
+}
+.slideshow {
+  position: relative;
+  width: 320px;
+  height: 180px;
+  clear: both;
+}
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: auto;
 }
 .highlight {
   color: #d1d9e1;
