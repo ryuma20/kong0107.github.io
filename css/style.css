@@ -1060,6 +1060,7 @@ body {
   font-size: 14px;
   color: #666;
   margin-right: 16px;
+  white-space: nowrap;
 }
 .post-list .tags {
   color: #888;
@@ -1390,6 +1391,19 @@ article.media .link_list img {
   height: 1rem;
   vertical-align: middle;
 }
+article.media figure {
+  border: 1px dashed #444;
+  padding: 0.5em;
+  position: relative;
+}
+article.media figure .number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em 1em;
+  color: #ccc;
+  text-shadow: 0.1em 0.1em 0.1em #000, -1px -1px #fff;
+}
 .slideshow {
   position: relative;
   width: 320px;
@@ -1400,6 +1414,28 @@ article.media .link_list img {
   position: absolute;
   width: 100%;
   height: auto;
+}
+.thumbnail-container {
+  display: block;
+  width: 320px;
+  height: 180px;
+  position: relative;
+  background-image: none !important;
+}
+.thumbnail-container > *,
+.thumbnail-container .gallery > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.thumbnail-container .poster {
+  z-index: 1;
+}
+.thumbnail-container .gallery,
+.thumbnail-container video {
+  z-index: 2;
 }
 .highlight {
   color: #d1d9e1;
