@@ -1391,12 +1391,12 @@ article.media .link_list img {
   height: 1rem;
   vertical-align: middle;
 }
-article.media figure {
-  border: 1px dashed #444;
+figure {
+  border: 1px dashed #666;
   padding: 0.5em;
   position: relative;
 }
-article.media figure .number {
+figure .number {
   position: absolute;
   top: 0;
   right: 0;
