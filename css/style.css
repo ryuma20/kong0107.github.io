@@ -1593,3 +1593,19 @@ pre code {
   background-color: #fff;
   color: #000;
 }
+#footnotelist li {
+  padding: 0.4em 0;
+}
+#footnotelist li span {
+  display: inline !important;
+}
+#footnotelist li span:first-child {
+  font-weight: bold;
+  color: #2bbc8a;
+}
+#footnotelist li:nth-child(even) {
+  background-color: #111;
+}
+#footnotelist li:nth-child(odd) {
+  background-color: #333;
+}
