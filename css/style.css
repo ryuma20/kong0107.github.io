@@ -1590,6 +1590,9 @@ pre code {
 .brand-icon-facebook {
   background-image: url("/images/brand_icons/facebook.png");
 }
+.brand-icon-twitter {
+  background-image: url("/images/brand_icons/twitter.png");
+}
 [class^=brand-icon-tumblr] {
   background-image: url("/images/brand_icons/tumblr.png");
 }
